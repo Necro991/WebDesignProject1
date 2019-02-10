@@ -1,0 +1,191 @@
+body{
+  background-color: #00bbff;
+}
+h1, h2{
+  user-select: none;
+  text-shadow: 0 0 3px white;
+}
+
+.content{
+  height:550px;
+  width: 1390px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 0px;
+
+  background-image: url("street.png");
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+}
+
+button{
+   position:absolute;
+   width:150px;
+   height:100px;
+   background:#0e7ba3;
+   color: #FFFFFF;
+   bottom:100px;
+   right:50%;
+   left:90%;
+   margin-left:-150px;
+   font-size: 50px;
+}
+.btn:hover{background: #eee;}
+
+.spin-the-wheel {
+  margin-left:500px;
+  margin-top: 50px;
+}
+
+label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.wheel {
+  position: relative;
+  height: 440px;
+  width: 440px;
+}
+
+.option {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+
+}
+#left{
+  position: relative;
+  top: 40%;
+  left: 40%;
+  font-size: 30px;
+  user-select: none;
+}
+#right{
+  position: relative;
+  top: 40%;
+  left: 10%;
+  font-size: 30px;
+  user-select: none;
+}
+.o1 {
+  background-color: #fc5437; /*red*/
+  top: 0;
+  left: 0;
+  border-top-left-radius: 100%;
+}
+
+.o2 {
+  background-color: #37b0fc; /*blue*/
+  top: 0;
+  right: 0;
+  border-top-right-radius: 100%;
+}
+
+.o3 {
+  background-color: #8c3ea8; /*violet*/
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 100%;
+}
+
+.o4 {
+  background-color: #04db7b; /*green*/
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 100%;
+}
+
+.message {
+  position: absolute;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  top: 150px;
+  left: 120px;
+  font-size: 20px;
+  height: 100px;
+  width: 150px;
+  z-index: 5;
+  opacity: 0;
+}
+
+.clicker {
+  position: absolute;
+  z-index: 30;
+  height: 0;
+  width: 0;
+  left: 200px;
+  top: -3px;
+  border-width: 20px 20px 0 20px;
+  transform: scaley(2);
+  transform-origin: 50% 0;
+  border-color: black transparent transparent transparent;
+  border-style: solid;
+}
+
+:checked ~ .wheel {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1765deg);
+  }
+}
+
+:checked ~ .message {
+  animation-name: msg;
+  animation-delay: 1.9s;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+@keyframes msg {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+:checked ~ .clicker {
+  animation-name: Clicker;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+@keyframes Clicker {
+  0%, 100% {
+    transform:  rotate(0deg) scaley(2);
+  }
+   5%, 10%, 16%, 23%, 31%, 40%, 50%, 61%, 73%, 86% {
+    transform:  rotate(-15deg) scaley(2);
+
+  }
+  7.5%, 13%, 20.5%, 27%, 35.5%, 45%, 55.5%, 67%, 79.5% {
+    transform:  rotate(-10deg) scaley(2);
+  }
+}
