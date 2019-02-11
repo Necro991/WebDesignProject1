@@ -1,45 +1,22 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<title>YOUR LUCK</title>
-	<h1 align="center">Wheel of Fortune</h1>
-	<h2 align ="center">Team Members: Pritam Roy, Alexander Gould, Hao Nguyen </h2>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-
-	<div class="content">
-		<div class="spin-the-wheel">
-		  <label>
-		    <input type="radio">
-		    <div class="clicker"></div>
-				<div class="wheel">
-			  	<div class="option o1">
-			    	<span id="left">Hawaii</span>
-		  		</div>
-		  		<div class="option o2">
-		    		<span id="right">New York</span>
-		  		</div>
-				  <div class="option o3">
-				    <span id="left">Florida</span>
-				  </div>
-				  <div class="option o4">
-				    <span id="right">California</span>
-				  </div>
-				</div>
-
-		    <div class="message">
-		      You won a vacation! <br>
-		      Click <a href="https://www.costcotravel.com/"> here </a> to claim it.
-		    </div>
-
+	<head>
+		<title>Wheel of Fortune</title>
+		<h1 align="center">Wheel of Fortune</h1>
+		<h2 align ="center">Team Members: Pritam Roy, Alexander Gould, Hao Nguyen </h2>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div style="width:800px; margin:0 auto;" class="content">
+			<div style="width:408px; margin:0 auto;" class="spin-the-wheel">
+			<label>
+				<input type="radio">
+				<div class="clicker"></div>
+				<div class="wheel"><img src="wheel.png"></div>
+				<div class="message">You won a vacation to New York!<br>Click <a href="https://www.costcotravel.com/">here</a> to claim it.</div>
 		  </label>
+			</div>
 		</div>
-	</div>
-
-	<button class="btn" value="Refresh Page" onClick="window.location.reload()">Retry</button>
-</body>
-
+		<button class="btn" value="Refresh Page" onClick="window.location.reload()">Retry</button>
+	</body>
 </html>
